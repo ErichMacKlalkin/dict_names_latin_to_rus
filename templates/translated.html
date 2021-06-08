@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+    <head>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>{{ the_title }}</title>
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+     </head>
+   <body>
+
+
+<h2>{{ the_title }}</h2>
+
+
+
+
+
+<p>List of translated names to show:
+
+<button class="btn" data-clipboard-target="#steew">Copy It!</button>
+
+</p>
+
+
+
+<div id='steew' class='output_value' name="res">
+
+{% for user in res %}
+	<li>{{ user }}</li>
+{% endfor %}
+</div>
+
+
+<script>
+    
+	var clipboard = new ClipboardJS('.btn');
+
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+</script>
+
+
+
+
+
+
+<script>
+$( "li:contains('a')").css( "color", "#70af85" );
+$( "li:contains('A')").css( "color", "#70af85" );
+$( "li:contains('e')").css( "color", "#70af85" );
+$( "li:contains('E')").css( "color", "#70af85" );
+$( "li:contains('I')").css( "color", "#70af85" );
+$( "li:contains('i')").css( "color", "#70af85" );
+$( "li:contains('o')").css( "color", "#70af85" );
+$( "li:contains('O')").css( "color", "#70af85" );
+$( "li:contains('U')").css( "color", "#70af85" );
+$( "li:contains('u')").css( "color", "#70af85" );
+$( "li:contains('y')").css( "color", "#70af85" );
+$( "li:contains('Y')").css( "color", "#70af85" );
+
+</script>
+
+
+
+<div class='footer'>
+
+</div>
+		
+<p>{{ result }}</p>
+
+<img class="dude" src="{{url_for('static', filename='Dude.jpg')}}">
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+		<title>{{ the_title }}</title>
+		 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+
+<div class='input_value'>
+<h2>{{ the_title }}</h2>
+<form method='POST' action='/translated'>
+<textarea class ='for_side_bar' id="translate" name="names" rows="4" cols="50"></textarea>
+<p>When you're ready, click this button:</p>
+<p><input class='button' value='Do it!' type='SUBMIT'></p>
+</form>
+</div>
+
+<h3>{{ the_results }}</h3>
+
+
+</body>
+
+</html>
